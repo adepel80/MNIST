@@ -25,8 +25,15 @@ import os
 ```
 from sklearn.datasets import fetch_openml
 X, y = fetch_openml('mnist_784', version = 1, return_X_y=True)
+```
+![IRIS DATASET](https://github.com/adepel80/MNIST/assets/123180341/0fb61ead-763c-4f8f-9a2d-1b85aad488e9)
+```
+from sklearn.datasets import fetch_openml
+X, y = fetch_openml('mnist_784', version = 1, return_X_y=True)
 
 ```
+![mnist import dataset](https://github.com/adepel80/MNIST/assets/123180341/4729217b-afe9-4bc1-b914-372294320ac1)
+
 # TRAIN AND TEST THE DATASET
 ```
 
@@ -46,6 +53,7 @@ X_test = X_test.astype('float32')
 X_train /= 255
 X_test /= 255
 ```
+![mnist reshape](https://github.com/adepel80/MNIST/assets/123180341/3db7a6f1-226d-4765-a28a-36746db1a66e)
 
 # BAGGING ALGORITHM
 ```
@@ -53,11 +61,15 @@ X_test /= 255
 from sklearn.ensemble import BaggingClassifier
 BaggingClassifier
 ```
+![importing bagging classifier](https://github.com/adepel80/MNIST/assets/123180341/a71f10d6-dbfb-4039-8209-2ac8824c9e5f)
+
 ```
 from sklearn.neighbors import KNeighborsClassifier
 knn=KNeighborsClassifier(n_neighbors=3)
 bag = BaggingClassifier(knn, max_samples =.5, max_features=28, n_estimators=20)
 ```
+![mnist knnbag](https://github.com/adepel80/MNIST/assets/123180341/a074acbe-b97d-4b56-a62d-7df01950c8cf)
+
 # TRAIN THE BAG ALGORITHM
 ```
 bag.fit(X_train, y_train)
@@ -67,6 +79,7 @@ bag.fit(X_train, y_train)
 y_pred = bag.predict(X_test)
 accuracy_score(y_test, y_pred)
 ```
+![mnist bag acc score](https://github.com/adepel80/MNIST/assets/123180341/796904c0-b42e-4d02-bb10-08d0597a8eaf)
 # IMPORT CLASSIFICATION REPORT
 ```
 from sklearn.metrics import classification_report
@@ -87,3 +100,6 @@ disp.plot()
 plt.suptitle("Confusion Matrix for Iris Dataset")
 plt.show()
 ```
+![mnist Matplot visual](https://github.com/adepel80/MNIST/assets/123180341/f5dcb7fb-631a-4d3d-a436-beeff1e5e9d1).
+
+
